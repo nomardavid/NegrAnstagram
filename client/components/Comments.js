@@ -15,9 +15,9 @@ const Comments = React.createClass({
     },
     handleSubmit(e){
         e.preventDefault();
-        // console.log("Submitting");
+        console.log("Submitting");
         // console.log(this.refs.value);
-        const postId = this.props.params;
+        const { postId } = this.props.params;
         const author =  this.refs.author.value;
         const comment = this.refs.comment.value;
         this.props.addComment(postId, author, comment);

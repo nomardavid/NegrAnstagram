@@ -16,6 +16,25 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 
+// import Raven for Sentry
+import Raven from 'raven-js';
+import { sentry_url } from './data/config';
+
+// Raven.config(sentry_url, {
+//   tags: {
+//     userlevel: 'editor'
+//   }
+// }).install();
+
+// logException(new Error('Incomplete Data!'), {
+//   email: 'omarmobgarcia@gmail.com'
+// });
+
+// Obvius, this does not exit
+// console.log(window.user.doesNotExit);
+
+// Raven.showReportDialog();
+
 const router = (
     <Provider store={store}>
       <Router history={history}>

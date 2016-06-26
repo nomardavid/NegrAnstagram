@@ -1,15 +1,19 @@
-function postcomments(state = [], action) {
+function postComments(state = [], action) {
     // console.log(state, action);
     switch (action.type) {
         case 'ADD_COMMENT':
          // return the new state with the new comments
-         return [...state,{
-             user: action.author,
-             text: action.comment
-         }];
+            return [...state,{
+                user: action.author,
+                text: action.comment
+            }];
         case 'REMOVE_COMMENT':
-            console.log("removing a comment");
-            return state; 
+            // console.log("removing comment");
+            return [
+            ...state.slice(0, action.i),
+
+            ...state.slice(action.i + 1)
+            ]
         default:
             return state;
     }
@@ -22,14 +26,9 @@ function comments(state = [], action) {
             // take the current state
             ...state,
             // overwrite this post with a new one
-            [action.postId]: postcomments(state[action.postId], action)
+            [action.postId]: postComments(state[action.postId], action)
         }
     }
-    return state;
-}
-
-function comments(state = [], action) {
-    // console.log(state, action);
     return state;
 }
 
