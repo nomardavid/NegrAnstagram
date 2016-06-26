@@ -2,7 +2,7 @@
   "name": "NegrAnstagram",
   "description": "requireds",
   "scripts": {
-    "postdeploy": "npm run clean && npm run build:webpack && node devServer.js"
+    "postdeploy": "npm run clean && npm run build:webpack && node start"
   },
   "env": {
   },
