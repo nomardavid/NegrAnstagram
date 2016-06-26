@@ -9,7 +9,7 @@
     "clean": "rimraf dist",
     "prod": "NODE_ENV=production node devServer.js",
     "start": "node devServer.js",
-    "postinstall": "webpack -p",
+    //"postinstall": "webpack -p",
     "tunnel": "browser-sync start --proxy localhost:7770 --tunnel wesbos"
   },
   "repository": {
